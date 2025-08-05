@@ -9,9 +9,19 @@ public class PalindromeNumber {
         return isPalindrome(num / 10, org, reverse); // RR - num/10
     }
 
-    // static int palindrome(int num) {
+    // static int rev;
+    static int palindrome(int num) {
+        return palindrome(num, 0);
+    }
 
-    // }
+    // Helper Function
+    static int palindrome(int num, int rev) {
+        // Base case
+        if (num == 0) {
+            return rev;
+        }
+        return palindrome(num / 10, rev * 10 + num % 10);
+    }
 
     public static void main(String[] args) {
         boolean result = isPalindrome(151, 151, 0);
