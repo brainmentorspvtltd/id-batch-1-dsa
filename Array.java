@@ -15,9 +15,11 @@ public class Array {
         p5[2] = new int[30];
         int a[] = { 10, 20, 30 };
         int[] b = { 10, 20, 30 };
+        b[0] = 1000; // Update
         int c[] = new int[10];
         int[] d = new int[10];
         int[] e = new int[] { 10, 20, 30 };
+        // Array Traverse
         for (int i = 0; i < d.length; i++) {
             System.out.println(d[i]);
         }
