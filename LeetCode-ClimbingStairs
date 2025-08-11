@@ -1,0 +1,10 @@
+class Solution {
+    public int climbStairs(int n) {
+        if(n<=1){
+            return 1;
+        }
+        int r1 = climbStairs(n-1);
+        int r2 = climbStairs(n-2);
+        return r1 + r2;
+    }
+}
