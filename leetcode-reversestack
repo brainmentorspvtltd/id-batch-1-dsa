@@ -1,0 +1,25 @@
+
+class Solution {
+    static void reverse(Stack<Integer> st) {
+        if(st.isEmpty()){
+            return ;
+        }
+        // code here
+        int val = st.pop();
+        reverse(st);
+        // BackTrack
+        insertAtBottom(val, st);
+    }
+    static void insertAtBottom(int val, Stack<Integer> stack){
+        if(stack.isEmpty()){
+            stack.push(val);
+            return ;
+        }  
+        int topValue = stack.pop();
+        insertAtBottom(val, stack);
+        // BackTrack
+        stack.push(topValue);
+        
+        
+    }
+}
