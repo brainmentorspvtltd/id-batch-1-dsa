@@ -1,0 +1,53 @@
+// Step - 1 Binary Tree Node
+
+import java.util.Scanner;
+
+class BinaryTreeNode {
+    int data;
+    BinaryTreeNode left; // null
+    BinaryTreeNode right; // null
+
+    BinaryTreeNode(int data) {
+        this.data = data;
+    }
+}
+
+class BinaryTreeOperations {
+    static Scanner scanner = new Scanner(System.in);
+
+    static void print(BinaryTreeNode root) {
+        if (root == null) {
+            return;
+        }
+        System.out.println(root.data);
+        print(root.left);
+        print(root.right);
+    }
+
+    static BinaryTreeNode createTree() {
+        System.out.println("Enter the data of parent node or press -1 to exit.");
+        int data = scanner.nextInt();
+        if (data == -1) {
+            return null;
+        }
+        BinaryTreeNode node = new BinaryTreeNode(data);
+
+        System.out.println("Enter the data of left Node for  " + data);
+        node.left = createTree();
+        System.out.println("Enter the data of right for " + data);
+        node.right = createTree();
+        return node;
+    }
+}
+
+public class BinaryTreeDemo {
+    public static void main(String[] args) {
+        BinaryTreeNode root = BinaryTreeOperations.createTree();
+        BinaryTreeOperations.print(root);
+        // BinaryTreeNode root = new BinaryTreeNode(10);
+        // BinaryTreeNode left= new BinaryTreeNode(20);
+        // root.left = left;
+        // BinaryTreeNode right= new BinaryTreeNode(20);
+        // root.right = right;
+    }
+}
